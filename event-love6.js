@@ -104,6 +104,8 @@ var event_love6_isLoad = 1;
 
 $(function(){
     let event_love6_attack = 0;
+    let event_love6_lackBP = 0;
+    let event_love6_selectedAttack = "";
     updateParams();
     event_love6_setDate = setDate;
     $("#event-love6-save").unbind("click").click(saveParam);
@@ -117,6 +119,7 @@ $(function(){
             reLoadStatus();
             battle(event_love6_attack);
         } else {
+            event_love6_selectedAttack = "#event-love6-BPattack-1";
             setBPrecover(1);
         }
     });
@@ -126,6 +129,7 @@ $(function(){
             reLoadStatus();
             battle(event_love6_attack * 4);
         } else {
+            event_love6_selectedAttack = "#event-love6-BPattack-3";
             setBPrecover(3 - bp);
         }
     });
@@ -134,6 +138,25 @@ $(function(){
             event_love6_extra--;
             $("#event-love6-extra").val(event_love6_extra);
             battle(event_love6_attack * 10);
+        }
+    });
+    $("#event-love6-BPrecover-full").unbind("click").click(function(){
+        if (candyFull >= 1) {
+            candyFull--;
+            BPrecover(maxBp);
+        }
+    });
+    $("#event-love6-BPrecover-mini").unbind("click").click(function(){
+        if (candyMini >= event_love6_lackBP) {
+            candyMini -= event_love6_lackBP;
+            BPrecover(event_love6_lackBP + bp);
+        }
+    });
+    $("#event-love6-BPrecover-event").unbind("click").click(function(){
+        if (event_love6_candy >= event_love6_lackBP) {
+            event_love6_candy -= event_love6_lackBP;
+            $("#event-love6-candy").val(event_love6_candy);
+            BPrecover(event_love6_lackBP + bp);
         }
     });
 
@@ -188,43 +211,22 @@ $(function(){
         $("#event-love6-BPattack").show();
     }
     function setBPrecover(rebp) {
+        event_love6_lackBP = rebp;
         if (candyFull == 0) {
             $("#event-love6-BPrecover-full").addClass("event-love6-gray");
         } else {
             $("#event-love6-BPrecover-full").removeClass("event-love6-gray");
-            $("#event-love6-BPrecover-full").unbind("click").click(function(){
-                if (candyFull >= 1) {
-                    candyFull--;
-                    BPrecover(maxBp);
-                }
-            });
         }
         if (candyMini == 0) {
             $("#event-love6-BPrecover-mini").addClass("event-love6-gray");
         } else {
             $("#event-love6-BPrecover-mini").removeClass("event-love6-gray");
-            $("#event-love6-BPrecover-mini").unbind("click").click(function(){
-                if (candyMini >= 1) {
-                    let addBp = Math.min(rebp, candyMini)
-                    candyMini -= addBp;
-                    BPrecover(addBp + bp);
-                }
-            });
         }
         if (event_love6_candy == 0) {
             $("#event-love6-BPrecover-event").addClass("event-love6-gray");
         } else {
             $("#event-love6-BPrecover-event").removeClass("event-love6-gray");
-            $("#event-love6-BPrecover-event").unbind("click").click(function(){
-                if (event_love6_candy >= 1) {
-                    let addBp = Math.min(rebp, event_love6_candy);
-                    event_love6_candy -= addBp;
-                    $("#event-love6-candy").val(event_love6_candy);
-                    BPrecover(addBp + bp);
-                }
-            });
         }
-
         $("#event-love6-BPrecover").show();
     }
     function battle(estHp) {
@@ -263,6 +265,7 @@ $(function(){
         bp = Math.min(Math.max(afterbp, minBp), maxBp);
         reLoadStatus();
         $("#event-love6-BPrecover").hide();
+        $(event_love6_selectedAttack).trigger("click");
     }
 
     function getInteger(id, def) {
@@ -294,8 +297,8 @@ $(function(){
         event_love6_candy = Math.max(Math.min(event_love6_candy, event_love6_maxCandy), event_love6_minCandy);
         event_love6_extra = Math.max(Math.min(event_love6_extra, event_love6_maxExtra), event_love6_minExtra);
 
-        reLoadStatus();
         updateParams();
         setMain();
+        $("#event-love6-BPrecover").hide();
     }
 });
