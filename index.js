@@ -1,5 +1,4 @@
 $(function(){
-    reLoadTrigger = reLoad;
     reLoadStatus = setParam;
     reLoad();
     $("#footer-top").unbind("click").click(function(){

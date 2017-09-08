@@ -15,7 +15,6 @@ var chargeFull = 0;
 
 /* reLoad variables */
 var nowLoad = "top.html";
-var reLoadTrigger;
 var reLoadStatus;
 
 /* constant */

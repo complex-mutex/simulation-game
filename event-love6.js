@@ -104,19 +104,11 @@ if (typeof event_love6_isLoad === 'undefined') {
 var event_love6_isLoad = 1;
 
 $(function(){
-    $("#event-love6-point").val(event_love6_point);
-    $("#event-love6-save").unbind("click").click(saveParam);
-    $("#event-love6-dropUP").val(event_love6_dropUp);
-    $("#event-love6-pointUP").val(event_love6_pointUp);
-    $("#event-love6-vocalUP").val(event_love6_vocalUp);
-    $("#event-love6-godDateUP").val(event_love6_dateUp);
-    $("#event-love6-candy").val(event_love6_candy);
-    $("#event-love6-extra").val(event_love6_extra);
+    updateParams();
     event_love6_setDate = setDate;
-
+    $("#event-love6-save").unbind("click").click(saveParam);
     $("#event-love6-BPattack").hide();
     $("#event-love6-BPrecover").hide();
-
 
     if (event_love6_isBattle) {
         setDate();
@@ -124,6 +116,15 @@ $(function(){
         $("#event-love6-main").load("event-love6-select.html");
     }
 
+    function updateParams() {
+        $("#event-love6-point").val(event_love6_point);
+        $("#event-love6-dropUP").val(event_love6_dropUp);
+        $("#event-love6-pointUP").val(event_love6_pointUp);
+        $("#event-love6-vocalUP").val(event_love6_vocalUp);
+        $("#event-love6-godDateUP").val(event_love6_dateUp);
+        $("#event-love6-candy").val(event_love6_candy);
+        $("#event-love6-extra").val(event_love6_extra);
+    }
     function setDate(gotoGod = false) {
         if (!event_love6_isBattle) {
             event_love6_isBattle = true;
@@ -289,6 +290,12 @@ $(function(){
         event_love6_candy = Math.max(Math.min(event_love6_candy, event_love6_maxCandy), event_love6_minCandy);
         event_love6_extra = Math.max(Math.min(event_love6_extra, event_love6_maxExtra), event_love6_minExtra);
 
-        reLoadTrigger();
+        reLoadStatus();
+        updateParams();
+        if (event_love6_isBattle) {
+            setDate();
+        } else {
+            $("#event-love6-main").load("event-love6-select.html");
+        }
     }
 });

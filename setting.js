@@ -1,18 +1,21 @@
 $(function(){
-    $("#setting-lv").val(lv);
-    $("#setting-exp").val(exp);
-    $("#setting-stamina").val(stamina);
-    $("#setting-maxStamina").val(maxStamina);
-    $("#setting-bp").val(bp);
-    $("#setting-free").val(free);
-    $("#setting-premium").val(premium);
-    $("#setting-vocal").val(vocal);
-    $("#setting-dance").val(dance);
-    $("#setting-chargeHalf").val(chargeHalf);
-    $("#setting-chargeFull").val(chargeFull);
-    $("#setting-candyMini").val(candyMini);
-    $("#setting-candyFull").val(candyFull);
+    function updateParams() {
+        $("#setting-lv").val(lv);
+        $("#setting-exp").val(exp);
+        $("#setting-stamina").val(stamina);
+        $("#setting-maxStamina").val(maxStamina);
+        $("#setting-bp").val(bp);
+        $("#setting-free").val(free);
+        $("#setting-premium").val(premium);
+        $("#setting-vocal").val(vocal);
+        $("#setting-dance").val(dance);
+        $("#setting-chargeHalf").val(chargeHalf);
+        $("#setting-chargeFull").val(chargeFull);
+        $("#setting-candyMini").val(candyMini);
+        $("#setting-candyFull").val(candyFull);
+    }
 
+    updateParams();
     $("#setting-save").unbind("click").click(SaveParam);
 
     function getInteger(id, def) {
@@ -54,6 +57,7 @@ $(function(){
         candyMini = Math.min(Math.max(candyMini, minCandyMini), maxCandyMini);
         candyFull = Math.min(Math.max(candyFull, minCandyFull), maxCandyFull);
 
-        reLoadTrigger();
+        updateParams();
+        reLoadStatus();
     }
 });
