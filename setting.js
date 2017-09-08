@@ -1,4 +1,7 @@
 $(function(){
+    updateParams();
+    $("#setting-save").unbind("click").click(SaveParam);
+
     function updateParams() {
         $("#setting-lv").val(lv);
         $("#setting-exp").val(exp);
@@ -14,10 +17,6 @@ $(function(){
         $("#setting-candyMini").val(candyMini);
         $("#setting-candyFull").val(candyFull);
     }
-
-    updateParams();
-    $("#setting-save").unbind("click").click(SaveParam);
-
     function getInteger(id, def) {
         var n = parseInt($("#" + id).val());
         return (!isNaN(n) ? n : def);

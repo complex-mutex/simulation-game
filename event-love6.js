@@ -99,22 +99,43 @@ if (typeof event_love6_isLoad === 'undefined') {
     var event_love6_setDate;
 }
 
-
 /* 複数回変数宣言が実行されないための記述 */
 var event_love6_isLoad = 1;
 
 $(function(){
+    let event_love6_attack = 0;
     updateParams();
     event_love6_setDate = setDate;
     $("#event-love6-save").unbind("click").click(saveParam);
     $("#event-love6-BPattack").hide();
     $("#event-love6-BPrecover").hide();
+    setMain();
 
-    if (event_love6_isBattle) {
-        setDate();
-    } else {
-        $("#event-love6-main").load("event-love6-select.html");
-    }
+    $("#event-love6-BPattack-1").unbind("click").click(function(){
+        if (bp >= 1) {
+            bp--;
+            reLoadStatus();
+            battle(event_love6_attack);
+        } else {
+            setBPrecover(1);
+        }
+    });
+    $("#event-love6-BPattack-3").unbind("click").click(function(){
+        if (bp >= 3) {
+            bp -= 3;
+            reLoadStatus();
+            battle(event_love6_attack * 4);
+        } else {
+            setBPrecover(3 - bp);
+        }
+    });
+    $("#event-love6-BPattack-extra").unbind("click").click(function(){
+        if (event_love6_extra >= 1) {
+            event_love6_extra--;
+            $("#event-love6-extra").val(event_love6_extra);
+            battle(event_love6_attack * 10);
+        }
+    });
 
     function updateParams() {
         $("#event-love6-point").val(event_love6_point);
@@ -124,6 +145,13 @@ $(function(){
         $("#event-love6-godDateUP").val(event_love6_dateUp);
         $("#event-love6-candy").val(event_love6_candy);
         $("#event-love6-extra").val(event_love6_extra);
+    }
+    function setMain() {
+        if (event_love6_isBattle) {
+            setDate();
+        } else {
+            $("#event-love6-main").load("event-love6-select.html");
+        }
     }
     function setDate(gotoGod = false) {
         if (!event_love6_isBattle) {
@@ -145,41 +173,17 @@ $(function(){
     }
 
     function setBPattack() {
-        var s = vocal / 10 * (event_love6_vocalUp / 100 + 1.0) * (event_love6_isTwice ? 1.1 : 1);
-        s = Math.round(s);
-        $("#event-love6-BPattack-1-score").text(s);
-        $("#event-love6-BPattack-3-score").text(s * 4);
-        $("#event-love6-BPattack-extra-score").text(s * 10);
+        event_love6_attack = Math.round(vocal / 10 * (event_love6_vocalUp / 100 + 1.0) * (event_love6_isTwice ? 1.1 : 1));
+        $("#event-love6-BPattack-1-score").text(event_love6_attack);
+        $("#event-love6-BPattack-3-score").text(event_love6_attack * 4);
+        $("#event-love6-BPattack-extra-score").text(event_love6_attack * 10);
 
-        $("#event-love6-BPattack-1").unbind("click").click(function(){
-            if (bp >= 1) {
-                bp--;
-                reLoadStatus();
-                battle(s * (Math.random() / 3 + 1));
-            } else {
-                setBPrecover(1);
-            }
-        });
-        $("#event-love6-BPattack-3").unbind("click").click(function(){
-            if (bp >= 3) {
-                bp -= 3;
-                reLoadStatus();
-                battle(s * 4 * (Math.random() / 3 + 1));
-            } else {
-                setBPrecover(3 - bp);
-            }
-        });
+        event_love6_attack = Math.round(event_love6_attack * (Math.floor(Math.random() * 5) / 10 + 1));
+
         if (event_love6_extra == 0) {
             $("#event-love6-BPattack-extra").addClass("event-love6-gray");
         } else {
             $("#event-love6-BPattack-extra").removeClass("event-love6-gray");
-            $("#event-love6-BPattack-extra").unbind("click").click(function(){
-                if (event_love6_extra >= 1) {
-                    event_love6_extra--;
-                    $("#event-love6-extra").val(event_love6_extra);
-                    battle(s * 10 * (Math.random() / 3 + 1));
-                }
-            });
         }
         $("#event-love6-BPattack").show();
     }
@@ -292,10 +296,6 @@ $(function(){
 
         reLoadStatus();
         updateParams();
-        if (event_love6_isBattle) {
-            setDate();
-        } else {
-            $("#event-love6-main").load("event-love6-select.html");
-        }
+        setMain();
     }
 });
