@@ -1,0 +1,106 @@
+#event-love6-title {
+    width : 100%;
+    font-size : 15px;
+    display : block;
+    text-align : center;
+    margin : 3% auto;
+}
+#event-love6-main {
+    width : 90%;
+    height : 50%;
+    margin : 3% 5%;
+    border-radius : 10%;
+    border : 2px blue solid;
+}
+#event-love6-point-area {
+    width : 80%;
+    height : 10%;
+    margin : 3% 10%;
+    border-radius : 10%;
+    border : 1px black solid;
+    display : flex;
+    justify-content : center;
+    align-items : center;
+}
+#event-love6-point-area span {
+    text-align : center;
+    font-size : 15px;
+    width : 50%;
+}
+#event-love6-point {
+    text-align : right;
+    display : block;
+    margin : 0 5%;
+}
+#event-love6-save {
+    display : block;
+    margin : 3% auto;
+}
+#event-love6-up , #event-love6-up th , #event-love6-up td {
+    border : 1px black solid;
+    font-size : 13px;
+}
+#event-love6-up {
+    width : 90%;
+    margin : 3% 5%;
+}
+#event-love6-up th, #event-love6-up td {
+    width : 25%;
+    text-align : center;
+}
+#event-love6-dropUP, #event-love6-pointUP, #event-love6-vocalUP, #event-love6-godDateUP {
+    width : 60%;
+}
+#event-love6-item, #event-love6-item th, #event-love6-item td {
+    border : 1px black solid;
+    font-size : 13px;
+}
+#event-love6-item {
+    width : 90%;
+    margin : 3% 5%;
+}
+#event-love6-item th, #event-love6-item td {
+    width : 50%;
+    text-align : center;
+}
+#event-love6-item tr td input {
+    width : 100%;
+}
+#event-love6-BPattack {
+    width : 90%;
+    height : 10%;
+    margin : 2% auto;
+    display : flex;
+    justify-content : space-around;
+    align-items : center;
+    border-radius : 10%;
+}
+#event-love6-BPattack div {
+    width : 30%;
+    height : 90%;
+    border-radius : 10%;
+}
+#event-love6-BPattack div span , #event-love6-BPrecover div span{
+    text-align : center;
+    width : 100%;
+    display : block;
+    height : 50%;
+}
+#event-love6-BPrecover {
+    width : 90%;
+    height : 10%;
+    margin : 2% auto;
+    display : flex;
+    justify-content : space-around;
+    align-items : center;
+    border-radius : 10%;
+}
+#event-love6-BPrecover div {
+    width : 30%;
+    height : 90%;
+    border-radius : 10%;
+}
+.event-love6-gray {
+    Opacity : 0.8;
+    background-color : gray;
+}

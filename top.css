@@ -1,0 +1,25 @@
+#top-title {
+    border : none;
+    width : 90%;
+    height : 20%;
+    margin : 15% 5% 5% 5%;
+    display : flex;
+    justify-content : center;
+    align-items : center;
+}
+#top-title span {
+    font-size : 20px;
+}
+#top-start-button {
+    border : 2px black solid;
+    width : 40%;
+    height : 10%;
+    margin : 30% 30% 5% 30%;
+    border-radius : 30%;
+    display : flex;
+    justify-content : center;
+    align-items : center;
+}
+#top-start-button span {
+    font-size : 15px;
+}

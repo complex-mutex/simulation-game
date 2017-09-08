@@ -1,0 +1,21 @@
+#setting-title {
+    font-size : 15px;
+    text-align : center;
+    margin : 2% auto;
+    width : 100%;
+    display: inline-block;
+}
+.setting-table , .setting-table th, .setting-table td {
+    border : 1px black solid;
+    width : 100%;
+}
+.setting-table th, .setting-table td {
+    width : 50%;
+}
+#setting-save {
+    display : block;
+    margin : 3% auto;
+}
+.setting-table tr td input {
+    width : 100%;
+}

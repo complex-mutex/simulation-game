@@ -1,0 +1,30 @@
+<script type="text/javascript" src="event-love6.js"></script>
+<link rel="stylesheet" type="text/css" href="event-love6.css">
+<span id="event-love6-title">彼氏イベントシミュレータ</span>
+<table id="event-love6-up">
+    <tr><th>ドロップ率</th><th>獲得ptUP</th><th>Vocal UP</th><th>神デート</th></tr>
+    <tr><td><span>×</span><input type="number" id="event-love6-dropUP" step="0.01"><span>倍</span></td>
+        <td><span>＋</span><input type="number" id="event-love6-pointUP"><span>%</span></td>
+        <td><span>＋</span><input type="number" id="event-love6-vocalUP"><span>%</span></td>
+        <td><span>×</span><input type="number" id="event-love6-godDateUP" step="0.01"><span>倍</span></td>
+    </tr>
+</table>
+<div id="event-love6-main"></div>
+<div id="event-love6-BPattack">
+    <div id="event-love6-BPattack-1"><span>BP1で攻撃</span><span id="event-love6-BPattack-1-score"></span></div>
+    <div id="event-love6-BPattack-3"><span>BP3で攻撃</span><span id="event-love6-BPattack-3-score"></span></div>
+    <div id="event-love6-BPattack-extra"><span>特殊アイテムで攻撃</span><span id="event-love6-BPattack-extra-score"></span></div>
+</div>
+<div id="event-love6-BPrecover">
+    <div id="event-love6-BPrecover-full"><span>キャンディ</span><span>全回復</span></div>
+    <div id="event-love6-BPrecover-mini"><span>キャンディ・ミニ</span><span>BP1回復</span></div>
+    <div id="event-love6-BPrecover-event"><span>イベントキャンディ</span><span>BP1回復</span></div>
+</div>
+<!-- <div id="event-love6-Stamina-recover"></div> -->
+<div id="event-love6-point-area"><span>獲得ポイント</span><input type="number" id="event-love6-point"></div>
+<table id="event-love6-item">
+    <tr><th>設定パラメータ</th><th>設定値</th></tr>
+    <tr><td>イベントキャンディ</td><td><input type="number" id="event-love6-candy"></td></tr>
+    <tr><td>特殊アイテム</td><td><input type="number" id="event-love6-extra"></td></tr>
+</table>
+<input type="button" value="保存" id="event-love6-save">

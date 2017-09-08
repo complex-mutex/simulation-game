@@ -1,0 +1,35 @@
+#event-love6-battle-info {
+    width : 90%;
+    margin : 1% auto;
+    display : flex;
+    border-radius: 20%;
+    justify-content : space-between;
+    align-items : center;
+}
+#event-love6-battle-info span {
+    width : 40%;
+    text-align : center;
+}
+#event-love6-battle-HP {
+    width : 90%;
+    margin : 1% auto;
+    border : none;
+    display : flex;
+    justify-content : center;
+    align-items : center;
+}
+#event-love6-battle-HPbar {
+    width : 50%;
+    margin : 0 5%;
+    border-radius : 20%;
+    height : 5%;
+}
+#event-love6-battle-HPnow {
+    height : 90%;
+    background-color : #00ffff;
+    border-radius: 20%;
+}
+#event-love6-battle-HP span {
+    width : 40%;
+    text-align : center;
+}

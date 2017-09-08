@@ -1,0 +1,10 @@
+#home-event {
+    width : 15%;
+    height : 15%;
+    margin : 10% 5% auto auto;
+    border-radius : 50%;
+    display : flex;
+    justify-content : center;
+    align-items : center;
+    background-color : pink;
+}
