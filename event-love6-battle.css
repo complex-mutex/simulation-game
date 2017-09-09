@@ -33,3 +33,15 @@
     width : 40%;
     text-align : center;
 }
+#event-love6-battle-damage {
+    width : 60%;
+    height : 30%;
+    margin : 30% auto 0 auto;
+    display : flex;
+    justify-content : center;
+    align-items : center;
+    border : none;
+}
+#event-love6-battle-damage span {
+    font-size : 30px;
+}

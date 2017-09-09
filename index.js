@@ -1,4 +1,5 @@
 $(function(){
+    $.ajaxSetup({cache : true});
     reLoadStatus = setParam;
     reLoad();
     $("#footer-top").unbind("click").click(function(){
