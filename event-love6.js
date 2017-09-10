@@ -103,9 +103,9 @@ if (typeof event_love6_isLoad === 'undefined') {
 var event_love6_isLoad = 1;
 
 $(function(){
-    let event_love6_attack = 0;
-    let event_love6_lackBP = 0;
-    let event_love6_selectedAttack = "";
+    var event_love6_attack = 0;
+    var event_love6_lackBP = 0;
+    var event_love6_selectedAttack = "";
     updateParams();
     event_love6_setDate = setDate;
     $("#event-love6-save").unbind("click").click(saveParam);
@@ -113,7 +113,8 @@ $(function(){
     $("#event-love6-BPrecover").hide();
     setMain();
 
-    $("#event-love6-BPattack-1").unbind("click").click(function(e, isCnt = 0){
+    $("#event-love6-BPattack-1").unbind("click").click(function(e, isCnt){
+        if (typeof isCnt === 'undefined') isCnt = 0;
         event_love6_selectedAttack = "#event-love6-BPattack-1";
         if (isCnt) {
             battle(event_love6_attack, isCnt);
@@ -127,7 +128,8 @@ $(function(){
             setBPrecover(1);
         }
     });
-    $("#event-love6-BPattack-3").unbind("click").click(function(e, isCnt = 0){
+    $("#event-love6-BPattack-3").unbind("click").click(function(e, isCnt){
+        if (typeof isCnt === 'undefined') isCnt = 0;
         event_love6_selectedAttack = "#event-love6-BPattack-3";
         if (isCnt) {
             battle(event_love6_attack * 4, isCnt);
@@ -141,7 +143,8 @@ $(function(){
             setBPrecover(3 - bp);
         }
     });
-    $("#event-love6-BPattack-extra").unbind("click").click(function(e, isCnt = 0){
+    $("#event-love6-BPattack-extra").unbind("click").click(function(e, isCnt){
+        if (typeof isCnt === 'undefined') isCnt = 0;
         event_love6_selectedAttack = "#event-love6-BPattack-extra";
         if (isCnt) {
             battle(event_love6_attack * 10, isCnt);
@@ -189,7 +192,8 @@ $(function(){
             $("#event-love6-main").load("event-love6-select.html");
         }
     }
-    function setDate(gotoGod = false) {
+    function setDate(gotoGod) {
+        if (typeof gotoGod === 'undefined') gotoGod = 0;
         if (!event_love6_isBattle) {
             event_love6_isBattle = true;
             event_love6_isTwice = false;
@@ -241,8 +245,9 @@ $(function(){
         }
         $("#event-love6-BPrecover").show();
     }
-    function battle(estHp, isCnt = 0) {
-        let secondAttackRate = 0.4;
+    function battle(estHp, isCnt) {
+        if (typeof isCnt === 'undefined') isCnt = 0;
+        var secondAttackRate = 0.4;
         estHp = Math.round(estHp);
         $("#event-love6-BPattack").hide();
         $("#event-love6-BPrecover").hide();
@@ -252,8 +257,8 @@ $(function(){
             event_love6_isBattle = false;
         }
         $("#event-love6-battle-damage span").text(estHp);
-        let animation_duration = 500;
-        let f_s = $("#event-love6-battle-damage span").css("font-size");
+        var animation_duration = 500;
+        var f_s = $("#event-love6-battle-damage span").css("font-size");
         $("#event-love6-battle-damage span").stop(true, true).animate(
             {"font-size" : "0px"},
             {duration : animation_duration, queue : false, complete : function() {
