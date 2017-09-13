@@ -4,8 +4,9 @@ p, span {
 div {
     border : #000000 solid 1px;
 }
-input {
-    text-align : right; 
+input[type="number"] {
+    text-align : right;
+    width : -webkit-fill-available;
 }
 #screen {
     width : 400px;

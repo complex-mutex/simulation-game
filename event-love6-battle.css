@@ -12,6 +12,7 @@
 }
 #event-love6-battle-HP {
     width : 90%;
+    height : 10%;
     margin : 1% auto;
     border : none;
     display : flex;
@@ -22,7 +23,7 @@
     width : 50%;
     margin : 0 5%;
     border-radius : 20%;
-    height : 5%;
+    height : 20%;
 }
 #event-love6-battle-HPnow {
     height : 90%;
