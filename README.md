@@ -13,11 +13,15 @@
 * (auto機能？)
 * その他要望機能...
 
-動作確認は最新版のGoogle Chromeで行っています。  
-それ以外のブラウザではうまく動作しなかったり、レイアウトが崩れる場合があります。
+動作確認は以下の2つで行っております。
+* 最新版のGoogle Chrome(Windows7)
+* Mobile Safari(iOS9)  
 
-ソースコードをダウンロードしていただき、index.htmlをブラウザで開いてお楽しみ下さい。
-このときChromeではjQueryをローカルで動作させるために、
+それ以外のブラウザや端末ではうまく動作しなかったり、レイアウトが崩れる場合があります。
+
+ゲームは[ここ](https://complex-mutex.github.io/simulation-game/index.html)からお楽しみいただけます。
+
+ソースコードをダウンロードする場合には、ChromeでjQueryをローカルで動作させるために、
 ```
 --allow-file-access-from-files
 ```

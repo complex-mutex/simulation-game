@@ -9,18 +9,15 @@
     width : 90%;
     height : 50%;
     margin : 3% 5%;
-    border-radius : 10%;
+    border-radius : 20px;
     border : 2px blue solid;
 }
 #event-love6-point-area {
     width : 80%;
     height : 10%;
     margin : 3% 10%;
-    border-radius : 10%;
+    border-radius : 20px;
     border : 1px black solid;
-    display : flex;
-    justify-content : center;
-    align-items : center;
 }
 #event-love6-point-area span {
     text-align : center;
@@ -33,7 +30,7 @@
     margin : 0 5%;
 }
 #event-love6-up , #event-love6-up th , #event-love6-up td {
-    font-size : 13px;
+    font-size : 12px;
 }
 #event-love6-up th, #event-love6-up td {
     text-align : center;
@@ -42,7 +39,7 @@
     width : 60%;
 }
 #event-love6-item, #event-love6-item th, #event-love6-item td {
-    font-size : 13px;
+    font-size : 12px;
 }
 #event-love6-item th, #event-love6-item td {
     text-align : center;
@@ -51,15 +48,12 @@
     width : 90%;
     height : 10%;
     margin : 2% auto;
-    display : flex;
-    justify-content : space-around;
-    align-items : center;
-    border-radius : 10%;
+    border-radius : 20px;
 }
 #event-love6-BPattack div {
     width : 30%;
     height : 90%;
-    border-radius : 10%;
+    border-radius : 15px;
 }
 #event-love6-BPattack div span , #event-love6-BPrecover div span{
     text-align : center;
@@ -71,15 +65,12 @@
     width : 90%;
     height : 10%;
     margin : 2% auto;
-    display : flex;
-    justify-content : space-around;
-    align-items : center;
-    border-radius : 10%;
+    border-radius : 20px;
 }
 #event-love6-BPrecover div {
     width : 30%;
     height : 90%;
-    border-radius : 10%;
+    border-radius : 15px;
 }
 .event-love6-gray {
     Opacity : 0.8;

@@ -1,9 +1,6 @@
 #event-love6-select-gotoDate {
     width : 15%;
     height : 15%;
-    border-radius : 30%;
+    border-radius : 30px;
     margin : 10% 5% auto auto;
-    display : flex;
-    justify-content : center;
-    align-items : center;
 }
