@@ -32,35 +32,19 @@
     display : block;
     margin : 0 5%;
 }
-#event-love6-save {
-    display : block;
-    margin : 3% auto;
-}
 #event-love6-up , #event-love6-up th , #event-love6-up td {
-    border : 1px black solid;
     font-size : 13px;
 }
-#event-love6-up {
-    width : 90%;
-    margin : 3% 5%;
-}
 #event-love6-up th, #event-love6-up td {
-    width : 25%;
     text-align : center;
 }
 #event-love6-dropUP, #event-love6-pointUP, #event-love6-vocalUP, #event-love6-godDateUP {
     width : 60%;
 }
 #event-love6-item, #event-love6-item th, #event-love6-item td {
-    border : 1px black solid;
     font-size : 13px;
 }
-#event-love6-item {
-    width : 90%;
-    margin : 3% 5%;
-}
 #event-love6-item th, #event-love6-item td {
-    width : 50%;
     text-align : center;
 }
 #event-love6-BPattack {

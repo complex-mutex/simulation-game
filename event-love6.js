@@ -266,10 +266,10 @@ $(function(){
                 $(this).css({"font-size" : f_s});
             }}
         );
-        $("#event-love6-battle-HPnow").stop(true, true).animate(
-            {"width" : (event_love6_nowHp / event_love6_maxHp * 100) + "%"},
+        $("#event-love6-battle-HPbar").stop(true, true).animate(
+            {"value" : event_love6_nowHp},
             {duration : animation_duration, queue : false, step : function(s){
-                $("#event-love6-battle-HP span").text(Math.round(event_love6_maxHp * s / 100) + "/" + event_love6_maxHp);
+                $("#event-love6-battle-HP span").text(Math.round(s) + "/" + event_love6_maxHp);
             }, complete : function() {
                 if (event_love6_isBattle) {
                     event_love6_isTwice = true;

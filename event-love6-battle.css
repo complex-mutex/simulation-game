@@ -22,13 +22,10 @@
 #event-love6-battle-HPbar {
     width : 50%;
     margin : 0 5%;
-    border-radius : 20%;
-    height : 20%;
+    height : 30%;
 }
-#event-love6-battle-HPnow {
-    height : 90%;
+#event-love6-battle-HPbar::-webkit-progress-value{
     background-color : #00ffff;
-    border-radius: 20%;
 }
 #event-love6-battle-HP span {
     width : 40%;

@@ -4,10 +4,10 @@
     <title>妄想シミュレータ</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="index.css">
     <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="data.js"></script>
     <script type="text/javascript" src="index.js"></script>
-    <link rel="stylesheet" type="text/css" href="index.css">
 </head>
 <body>
     <div id="screen">
@@ -15,17 +15,12 @@
             <div id="header-user">
                 <div id="header-lv"><span></span></div>
                 <div id="header-exp">
-                    <div id="header-exp-bar">
-                        <div id="header-exp-now"></div>
-                        <span></span>
-                    </div>
+                    <progress id="header-exp-bar"></progress>
                 </div>
             </div>
             <div id="header-status">
                 <div id="header-stamina">
-                    <div id="header-stamina-bar">
-                        <div id="header-stamina-now"></div>
-                    </div>
+                    <progress id="header-stamina-bar"></progress>
                     <span></span>
                 </div>
                 <div id="header-bp">

@@ -2,11 +2,37 @@ p, span {
     font-size : 11px;
 }
 div {
-    border : #000000 solid 1px;
+    border : 1px gray solid;
 }
 input[type="number"] {
     text-align : right;
     width : -webkit-fill-available;
+}
+input[type="button"] {
+    display : block;
+    margin : 3% auto;
+}
+table {
+    border-collapse: collapse;
+    border : 1px black solid;
+    width : 95%;
+    margin : 1% 2.5%;
+    table-layout : fixed;
+}
+table td, table th{
+    border : 1px black solid;
+}
+.common-center-contents {
+    display : flex;
+    justify-content : center;
+    align-items : center;
+}
+progress, progress::-webkit-progress-bar, progress::-webkit-progress-value {
+    border-radius: 10px;
+}
+progress::-webkit-progress-bar {
+    background-color: white;
+    border : 1px black solid;
 }
 #screen {
     width : 400px;
@@ -48,21 +74,9 @@ input[type="number"] {
 #header-exp-bar {
     width : 70%;
     height : 50%;
-    border-radius : 15%;
-    position : relative;
 }
-#header-exp-now {
-    height : 85%;
-    border-radius : 15%;
-    background-color : pink;
-}
-#header-exp-bar span {
-    position : absolute;
-    top : 0px;
-    left : 30%;
-    padding : 0px;
-    margin : 0px;
-    font-size : 8px;
+#header-exp-bar::-webkit-progress-value {
+    background-color: pink;
 }
 #header-status {
     width : 40%;
@@ -85,9 +99,7 @@ input[type="number"] {
     margin : 0 10% 0 5%;
     border-radius : 20%;
 }
-#header-stamina-now {
-    height : 90%;
-    border-radius : 20%;
+#header-stamina-bar::-webkit-progress-value {
     background-color : #00ffff;
 }
 #header-stamina span {

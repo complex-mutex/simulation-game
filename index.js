@@ -26,10 +26,9 @@ $(function(){
 
     /* functions */
     function setParam() {
-        $("#header-exp-now").css("width", exp + "%");
-        $("#header-exp-bar span").text(exp + "%");
+        $("#header-exp-bar").attr("value", exp / 100);
         $("#header-lv span").text("Lv." + lv);
-        $("#header-stamina-now").css("width", (stamina / maxStamina * 100) + "%");
+        $("#header-stamina-bar").attr("max", maxStamina).attr("value", stamina);
         $("#header-stamina span").text(stamina + "/" + maxStamina);
         $("#header-bp span").text(bp + "/" + maxBp);
         for (var _ = 0; _ < maxBp; _++) {
